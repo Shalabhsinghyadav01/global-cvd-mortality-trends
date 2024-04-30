@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+	 <head> 
+		<title>Interactive World Map - Cardiovascular Disease Death Rates</title> <script src="https://d3js.org/d3.v6.min.js"></script> <script src="https://d3js.org/topojson.v3.min.js"></script> <link rel="stylesheet" href="styles.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <link rel="icon" type="image/png" href="favicon.png"> <meta name="description" content="Explore cardiovascular disease death rates across the world with this interactive map, line chart, and bubble chart visualization."> <meta property="og:image" content="thumbnail.png"> </head>
+		 <body> 
+			<header> <div class="logo">World Health Data</div> <nav> <ul> <li><a href="#map-section">Map</a></li> 
+			<li><a href="#line-chart-section">Line Chart</a></li> <li><a href="#bubble-chart-section">Bubble Chart</a></li> </ul> </nav> </header> <main> <section class="intro"> 
+			<h1>Global Cardiovascular Disease Death Rates</h1> 
+			<p>This interactive visualization explores age-standardized cardiovascular disease death rates across the world from 1990 to 2019. The data comes from the Global Burden of Disease study and was last updated in 2021. Use the slider to change the year and click on countries or bubbles to see more details.</p> </section>
+	<section id="map-section">
+	  <h2>World Map</h2>
+	  <div class="map-container">
+		<div id="map"></div>
+		<div class="tooltip"></div>
+		<div class="slider-container">
+		  <label for="year-slider" class="slider-label">Select Year:</label>
+		  <input type="range" id="year-slider" min="1990" max="2019" step="1" value="1990">
+		  <span id="year-value" class="slider-value"></span>
+		</div>
+		<div class="legend">
+		  <div class="legend-title">Cardiovascular Disease Death Rate</div>
+		  <div class="legend-scale"></div>
+		</div>
+	  </div>
+	</section>
+	
+	<section id="line-chart-section">
+		<h2>Country Trends</h2>
+		<div class="line-chart-container">
+		  <svg id="line-chart"></svg>
+		  <div class="line-chart-tooltip"></div>
+		</div>
+	  </section>
+	
+	<section id="bubble-chart-section">  
+	  <h2>Country Comparison</h2>
+	  <div class="bubble-chart-container">
+		<svg id="bubble-chart"></svg>
+	  </div>
+	</section>
+	
+	</main> <footer> <p>&copy; 2024 World Health Data. All rights reserved.</p> <p>Data Source: Global Burden of Disease Study | Last Updated: 2021</p> </footer> <script src="script.js"></script> </body> </html>
